@@ -1,0 +1,11 @@
+.button {
+    background-color: blue;
+    color: white;
+    border-radius: 30px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-display: inline-block;
+    margin: 10px;
+}
