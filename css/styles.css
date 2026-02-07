@@ -17,12 +17,14 @@ html {
 h1 {
     font-size: 1.95rem; /* learned off youtube */
     letter-spacing: -2%;
+    color: rgb(30, 255, 0);
 }
 
 h2 {
    font-size: 1.5625rem; /* learned off youtube */
    line-height: 110%;
    letter-spacing: -1.5%;
+   color: rgb(30, 255, 0);
 }
 
 h3 {
@@ -31,12 +33,12 @@ h3 {
 
 #intro {
   background-color: #000;
-  padding: 20px;
+  padding: 50px;
 }
 
 #key-factors {
   background-color: #333333;
-  padding: 20px;
+  padding: 50px;
 }
 
 .hero {
@@ -76,6 +78,7 @@ h3 {
 
 .tile { /* Shared content container used across sections */
   background-color: #555555;
+  color: white;
   padding: 30px;
   border-radius: 20px;
   max-width: 1200px;
@@ -87,24 +90,36 @@ h3 {
 .factor-list {
   list-style: none;
   background: #555555;
-  padding: 30px;           /* 20px space top, bottom, left, right */
-  margin: 0 auto;          /* centers the grid container */
+  padding: 30px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 20px;               /* spacing between items */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   border-radius: 20px;
-  max-width: 1200px;       /* keeps columns centered & readable */
+  max-width: 1200px;
+}
+
+ .factor-list b{ /* changes color of the bold title in the factor list */
+    color: rgb(30, 255, 0);;
+ }
+
+.factor-list li:hover b{ /* changes color of the bold title in the factor list back to black on the hover state only state */
+    color: #000;
 }
 
 .factor-list li {
   display: flex;              /* FLEXBOX */
   flex-direction: column;     /* stack title + paragraph */
   justify-content: flex-start;
-
-  background-color: #f4f4f4;
+  color: white;
+  background-color: #000;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
+}
 
+.factor-list li:hover {
+    background-color:rgb(30, 255, 0);
+    color: #000; 
 }
 
 @media (max-width: 900px) {
