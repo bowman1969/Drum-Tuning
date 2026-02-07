@@ -1,3 +1,20 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px; 
+}
+
+#intro {
+  background-color: #000;
+  padding: 20px;
+}
+
+#key-factors {
+  background-color: #fff4e6;
+  padding: 20px;
+}
+
 .tile {
     background-color: lightgray;
     padding: 30px;           /* 20px space top, bottom, left, right */
@@ -52,7 +69,7 @@ footer nav {
 }
 
 .button {
-    background-color: blue;
+    background-color: black;
     color: white;
     border-radius: 30px;
     padding: 15px;
