@@ -5,34 +5,94 @@ header {
     padding: 20px; 
 }
 
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html {
+    font-size: 16px;
+    line-height: 150%;
+}
+
+h1 {
+    font-size: 1.95rem; /* learned off youtube */
+    letter-spacing: -2%;
+}
+
+h2 {
+   font-size: 1.5625rem; /* learned off youtube */
+   line-height: 110%;
+   letter-spacing: -1.5%;
+}
+
+h3 {
+    font-size: 1.25rem; /* learned off youtube */
+}
+
 #intro {
   background-color: #000;
   padding: 20px;
 }
 
 #key-factors {
-  background-color: #fff4e6;
+  background-color: #333333;
   padding: 20px;
 }
 
-.tile {
-    background-color: lightgray;
-    padding: 30px;           /* 20px space top, bottom, left, right */
-    margin: 0 auto;
-    border-radius: 8px;
-    max-width: 1200px;
-    margin-bottom: 20px;
+.hero {
+  height: 40vh;               /* or 350px */
+  width: 100%;
+  background-image: url("../_images/drums.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-inner { /* Full-width banner */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  width: 100%;
+}
+
+.hero-content { /* Constrains hero content to page width */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+.tile { /* Shared content container used across sections */
+  background-color: #555555;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 1200px;
+  margin: 0 auto 10px;
+  margin-bottom: 20px;
+
 }
 
 .factor-list {
   list-style: none;
-  background: lightgray;
+  background: #555555;
   padding: 30px;           /* 20px space top, bottom, left, right */
   margin: 0 auto;          /* centers the grid container */
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
   gap: 20px;               /* spacing between items */
-  border-radius: 8px;
+  border-radius: 20px;
   max-width: 1200px;       /* keeps columns centered & readable */
 }
 
@@ -44,6 +104,7 @@ header {
   background-color: #f4f4f4;
   padding: 20px;
   border-radius: 8px;
+
 }
 
 @media (max-width: 900px) {
@@ -58,6 +119,12 @@ header {
   }
 } /* media query to make responsive (found technique by reseraching google and chat GPT) */
 
+footer {
+    color: white;
+    background-color: #000;
+    padding: 20px;
+}
+
 footer nav {
   display: flex;             /* make it a flex container */
   flex-direction: column;    /* stack button and text vertically */
@@ -69,13 +136,17 @@ footer nav {
 }
 
 .button {
-    background-color: black;
-    color: white;
+    background-color: rgb(30, 255, 0);
+    color: #000;
     border-radius: 30px;
-    padding: 15px;
+    padding: 15px 25px;
     text-align: center;
     text-decoration: none;
-    font-size: 20px;
     font-display: inline-block;
     margin: 20px;
+}
+
+.button:hover {
+  background-color: #555555;
+  color: rgb(30, 255, 0);
 }
