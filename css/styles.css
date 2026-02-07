@@ -36,7 +36,7 @@ h3 {
   padding: 50px;
 }
 
-#key-factors {
+#grid {
   background-color: #333333;
   padding: 50px;
 }
@@ -99,11 +99,11 @@ h3 {
   max-width: 1200px;
 }
 
- .factor-list b{ /* changes color of the bold title in the factor list */
+ .factor-list b { /* changes color of the bold title in the factor list */
     color: rgb(30, 255, 0);;
  }
 
-.factor-list li:hover b{ /* changes color of the bold title in the factor list back to black on the hover state only state */
+.factor-list li:hover b { /* changes color of the bold title in the factor list back to black on the hover state only state */
     color: #000;
 }
 
@@ -120,6 +120,53 @@ h3 {
 .factor-list li:hover {
     background-color:rgb(30, 255, 0);
     color: #000; 
+}
+
+.ordered-list {
+  list-style: decimal inside;
+  background: #555555;
+  padding: 30px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  border-radius: 20px;
+  max-width: 1200px;
+}
+
+ .ordered-list b { /* changes color of the bold title in the ordered list */
+    color: rgb(30, 255, 0);
+ }
+
+.ordered-list li {
+  padding: 20px;
+  color: white;
+  background: #444; /* optional, to see the spacing */
+  border-radius: 10px;
+}
+
+.ordered-list li::marker {  /* changes the number color */
+  color: rgb(30, 255, 0);
+  font-weight: bold;
+}
+
+.ordered-list li img {  /* changes image boxes to rounded edges */
+  max-width: 48%;
+  border-radius: 8px;
+  display: block;
+}
+
+.ordered-list li .image-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.ordered-list li .image-row img {
+  flex: 1 1 45%;
+  max-width: 100%;
+  border-radius: 10px;
+  height: auto;
 }
 
 @media (max-width: 900px) {
