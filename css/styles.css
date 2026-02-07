@@ -14,6 +14,7 @@ html {
     line-height: 150%;
 }
 
+/* Headings */
 h1 {
     font-size: 1.95rem; /* learned off youtube */
     letter-spacing: -2%;
@@ -36,11 +37,13 @@ h3 {
   padding: 50px;
 }
 
+/* Sections */
 #grid {
   background-color: #333333;
   padding: 50px;
 }
 
+/* Hero */
 .hero {
   height: 40vh;               /* or 350px */
   width: 100%;
@@ -76,7 +79,8 @@ h3 {
   height: auto;
 }
 
-.tile { /* Shared content container used across sections */
+/* Tiles */
+.tile {
   background-color: #555555;
   color: white;
   padding: 30px;
@@ -87,6 +91,7 @@ h3 {
 
 }
 
+/* Factor List */
 .factor-list {
   list-style: none;
   background: #555555;
@@ -122,6 +127,7 @@ h3 {
     color: #000; 
 }
 
+/* Ordered List */
 .ordered-list {
   list-style: decimal inside;
   background: #555555;
@@ -141,7 +147,7 @@ h3 {
 .ordered-list li {
   padding: 20px;
   color: white;
-  background: #444; /* optional, to see the spacing */
+  background: #444;
   border-radius: 10px;
 }
 
@@ -169,18 +175,20 @@ h3 {
   height: auto;
 }
 
+/* queries to make responsive (found technique by reseraching google and chat GPT) */
 @media (max-width: 900px) {
   .factor-list {
     grid-template-columns: repeat(2, 1fr);
   }
-} /* media query to make responsive (found technique by reseraching google and chat GPT) */
+} 
 
 @media (max-width: 500px) {
   .factor-list {
     grid-template-columns: 1fr;
   }
-} /* media query to make responsive (found technique by reseraching google and chat GPT) */
+}
 
+/* Footer */
 footer {
     color: white;
     background-color: #000;
@@ -188,13 +196,13 @@ footer {
 }
 
 footer nav {
-  display: flex;             /* make it a flex container */
-  flex-direction: column;    /* stack button and text vertically */
-  align-items: center;       /* center horizontally */
-  justify-content: center;   /* optional: center vertically if footer has height */
-  gap: 0px;                 /* spacing between button and text */
-  padding: 20px;             /* optional padding for breathing room */
-  text-align: center;        /* ensures text inside <p> is centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  padding: 20px;
+  text-align: center;
 }
 
 .button {
