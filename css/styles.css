@@ -1,14 +1,21 @@
+.tile {
+    background-color: lightgray;
+    padding: 30px;           /* 20px space top, bottom, left, right */
+    margin: 0 auto;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
 .factor-list {
   list-style: none;
   background: lightgray;
-  padding: 20px;           /* 20px space top, bottom, left, right */
+  padding: 30px;           /* 20px space top, bottom, left, right */
   margin: 0 auto;          /* centers the grid container */
-
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
   gap: 20px;               /* spacing between items */
   border-radius: 8px;
-
   max-width: 1200px;       /* keeps columns centered & readable */
 }
 
@@ -34,14 +41,14 @@
   }
 } /* media query to make responsive (found technique by reseraching google and chat GPT) */
 
-/* .flexcontainer {
-    display: flex:
-} */
-
-.factor_box {
-    background-color: lightgray;
-    padding: 20px;
-    margin: 20px;
+footer nav {
+  display: flex;             /* make it a flex container */
+  flex-direction: column;    /* stack button and text vertically */
+  align-items: center;       /* center horizontally */
+  justify-content: center;   /* optional: center vertically if footer has height */
+  gap: 0px;                 /* spacing between button and text */
+  padding: 20px;             /* optional padding for breathing room */
+  text-align: center;        /* ensures text inside <p> is centered */
 }
 
 .button {
