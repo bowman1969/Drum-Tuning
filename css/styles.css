@@ -1,3 +1,49 @@
+.factor-list {
+  list-style: none;
+  background: lightgray;
+  padding: 20px;           /* 20px space top, bottom, left, right */
+  margin: 0 auto;          /* centers the grid container */
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px;               /* spacing between items */
+  border-radius: 8px;
+
+  max-width: 1200px;       /* keeps columns centered & readable */
+}
+
+.factor-list li {
+  display: flex;              /* FLEXBOX */
+  flex-direction: column;     /* stack title + paragraph */
+  justify-content: flex-start;
+
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .factor-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} /* media query to make responsive (found technique by reseraching google and chat GPT) */
+
+@media (max-width: 500px) {
+  .factor-list {
+    grid-template-columns: 1fr;
+  }
+} /* media query to make responsive (found technique by reseraching google and chat GPT) */
+
+/* .flexcontainer {
+    display: flex:
+} */
+
+.factor_box {
+    background-color: lightgray;
+    padding: 20px;
+    margin: 20px;
+}
+
 .button {
     background-color: blue;
     color: white;
@@ -5,7 +51,7 @@
     padding: 15px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     font-display: inline-block;
-    margin: 10px;
+    margin: 20px;
 }
