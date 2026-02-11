@@ -1,74 +1,68 @@
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px; 
+:root { /* established variables that can be used throughout with the var function */
+  --green: rgb(30, 255, 0);
+  --dark-bg: #333333;
+  --mid-bg: #555555;
+  --light-bg: #666666;
+  --text-white: #fff;
+  --text-black: #000;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-html {
-    font-size: 16px;
-    line-height: 150%;
-}
-
 /* Headings */
 h1 {
-    font-size: 1.95rem; /* learned off youtube */
-    letter-spacing: -2%;
-    color: rgb(30, 255, 0);
+  font-size: 1.95rem;
+  letter-spacing: -2%;
+  color: var(--green);
 }
 
 h2 {
-   font-size: 1.5625rem; /* learned off youtube */
-   line-height: 110%;
-   letter-spacing: -1.5%;
-   color: rgb(30, 255, 0);
+  font-size: 1.5625rem;
+  line-height: 1.1;
+  letter-spacing: -1.5%;
+  color: var(--green);
 }
 
 h3 {
-    font-size: 1.25rem; /* learned off youtube */
+  font-size: 1.25rem;
 }
 
+/* Sections */
 #intro {
   background-color: #000;
   padding: 50px;
 }
 
-/* Sections */
 #grid {
-  background-color: #333333;
+  background-color: var(--dark-bg);
   padding: 50px;
 }
 
 /* Hero */
 .hero {
-  height: 40vh;               /* or 350px */
+  height: 40vh;
   width: 100%;
-  background-image: url("../_images/drums.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  background: url("../_images/drums.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
 }
 
-.hero-inner { /* Full-width banner */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
-  width: 100%;
-}
-
-.hero-content { /* Constrains hero content to page width */
+.hero-inner,
+.hero-content {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 30px;
+}
 
+.hero-content {
   display: flex;
   justify-content: center;
 }
@@ -81,20 +75,18 @@ h3 {
 
 /* Tiles */
 .tile {
-  background-color: #555555;
-  color: white;
+  background-color: var(--mid-bg);
+  color: var(--text-white);
   padding: 30px;
   border-radius: 20px;
   max-width: 1200px;
-  margin: 0 auto 10px;
-  margin-bottom: 20px;
-
+  margin: 0 auto 20px;
 }
 
 /* Factor List */
 .factor-list {
   list-style: none;
-  background: #555555;
+  background: var(--mid-bg);
   padding: 30px;
   margin: 0 auto;
   display: grid;
@@ -104,33 +96,34 @@ h3 {
   max-width: 1200px;
 }
 
- .factor-list b { /* changes color of the bold title in the factor list */
-    color: rgb(30, 255, 0);;
- }
-
-.factor-list li:hover b { /* changes color of the bold title in the factor list back to black on the hover state only state */
-    color: #000;
+.factor-list b {
+  color: var(--green);
 }
 
 .factor-list li {
-  display: flex;              /* FLEXBOX */
-  flex-direction: column;     /* stack title + paragraph */
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  color: white;
-  background-color: #000;
+  color: var(--text-white);
+  background-color: var(--text-black);
   padding: 20px;
   border-radius: 12px;
+  transition: all 0.3s;
 }
 
 .factor-list li:hover {
-    background-color:rgb(30, 255, 0);
-    color: #000; 
+  background-color: var(--green);
+  color: var(--text-black);
+}
+
+.factor-list li:hover b {
+  color: var(--text-black);
 }
 
 /* Ordered List */
 .ordered-list {
   list-style: decimal inside;
-  background: #555555;
+  background: var(--mid-bg);
   padding: 30px;
   margin: 0 auto;
   display: grid;
@@ -140,25 +133,26 @@ h3 {
   max-width: 1200px;
 }
 
- .ordered-list b { /* changes color of the bold title in the ordered list */
-    color: rgb(30, 255, 0);
- }
+.ordered-list b {
+  color: var(--green);
+}
 
 .ordered-list li {
   padding: 20px;
-  color: white;
-  background: #444;
-  border-radius: 10px;
+  color: var(--text-white);
+  background: var(--light-bg);
+  border-radius: 12px;
 }
 
-.ordered-list li::marker {  /* changes the number color */
-  color: rgb(30, 255, 0);
+.ordered-list li::marker {
+  color: var(--green);
   font-weight: bold;
 }
 
-.ordered-list li img {  /* changes image boxes to rounded edges */
+/* Images */
+.ordered-list li img {
   max-width: 48%;
-  border-radius: 8px;
+  border-radius: 10px;
   display: block;
 }
 
@@ -175,12 +169,12 @@ h3 {
   height: auto;
 }
 
-/* queries to make responsive (found technique by reseraching google and chat GPT) */
+/* Factor List Responsiveness */
 @media (max-width: 900px) {
   .factor-list {
     grid-template-columns: repeat(2, 1fr);
   }
-} 
+}
 
 @media (max-width: 500px) {
   .factor-list {
@@ -190,9 +184,9 @@ h3 {
 
 /* Footer */
 footer {
-    color: white;
-    background-color: #000;
-    padding: 20px;
+  color: var(--text-white);
+  background-color: var(--text-black);
+  padding: 20px;
 }
 
 footer nav {
@@ -200,23 +194,22 @@ footer nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0px;
-  padding: 20px;
   text-align: center;
+  padding: 20px;
 }
 
 .button {
-    background-color: rgb(30, 255, 0);
-    color: #000;
-    border-radius: 30px;
-    padding: 15px 25px;
-    text-align: center;
-    text-decoration: none;
-    font-display: inline-block;
-    margin: 20px;
+  background-color: var(--green);
+  color: var(--text-black);
+  border-radius: 30px;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  margin: 20px;
+  display: inline-block;
 }
 
 .button:hover {
-  background-color: #555555;
-  color: rgb(30, 255, 0);
+  background-color: var(--mid-bg);
+  color: var(--green);
 }
