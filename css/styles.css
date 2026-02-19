@@ -39,6 +39,21 @@ body {
   color: var(--text-light);
 }
 
+/* Lists */
+.list-group-numbered > .list-group-item::before {
+  font-size: 1.25rem; /* matches Bootstrap h5 size */
+  font-weight: 600;
+  color: var(--green);
+}
+
+.bg-section-dark {
+  background-color: #2a2a2a;
+}
+
+.bg-container-dark {
+  background-color: #2a2a2a;
+}
+
 /* Card flip-flop hover (like your old tiles) */
 .card-dark {
   background: var(--card);
