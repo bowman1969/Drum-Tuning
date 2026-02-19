@@ -78,6 +78,54 @@ body {
   color: #000;
 }
 
+/* 2 image style */
+.pattern-group {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cap the whole group to 300px and center it */
+.pattern-group {
+  max-width: 300px;
+}
+
+/* Make each image share space nicely and allow stacking */
+.pattern-img {
+  flex: 1 1 140px;   /* grow, shrink, base width */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Side-by-side group: never wider than 300px total */
+.pattern-pair {
+  max-width: 300px;
+}
+
+/* Images: responsive, share space, and cap at 300px when stacked */
+.pattern-img {
+  flex: 1 1 0;      /* share available width */
+  min-width: 0;     /* prevent overflow weirdness */
+  max-width: 100%;  /* responsive */
+  height: auto;
+}
+
+/* When wrapped (stacked), each image can be up to 300px wide */
+@media (max-width: 575.98px) {
+  .pattern-pair {
+    max-width: 300px;   /* keep the stacked column capped */
+  }
+
+  .pattern-img {
+    flex-basis: 300px;  /* makes each image take the full line */
+    max-width: 300px;   /* ensures no image exceeds 300px when stacked */
+  }
+}
+
+.pattern-pair {
+  max-width: 300px; /* caps the whole group */
+}
+
 /* Custom Bootstrap button variant */
 .btn-brand {
   --bs-btn-color: #000;
