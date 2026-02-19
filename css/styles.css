@@ -1,215 +1,75 @@
-:root { /* established variables that can be used throughout with the var function */
+:root {
   --green: rgb(30, 255, 0);
-  --dark-bg: #333333;
-  --mid-bg: #555555;
-  --light-bg: #666666;
-  --text-white: #fff;
-  --text-black: #000;
+  --bg-black: #000;
+  --panel: #555;
+  --card: #111;
+  --text-light: #fff;
+  --panel-band: #2a2a2a;
 }
 
-html {
-  font-size: 16px;
-  line-height: 1.5;
+.bg-panel-band {
+  background: var(--panel-band);
 }
 
+/* Global tweaks (keep light touch; Bootstrap does most) */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Headings */
-h1 {
-  font-size: 1.95rem;
-  letter-spacing: -2%;
-  color: var(--green);
-}
-
-h2 {
-  font-size: 1.5625rem;
-  line-height: 1.1;
-  letter-spacing: -1.5%;
-  color: var(--green);
-}
-
-h3 {
-  font-size: 1.25rem;
-}
-
-/* Sections */
-#intro {
-  background-color: #000;
-  padding: 50px;
-}
-
-#grid {
-  background-color: var(--dark-bg);
-  padding: 50px;
-}
+/* Brand utility */
+.brand-green { color: var(--green); }
 
 /* Hero */
 .hero {
-  height: 40vh;
-  width: 100%;
+  min-height: 40vh;
   background: url("../_images/drums.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
 }
 
-.hero-inner,
-.hero-content {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 30px;
+.hero--small {
+  min-height: 25vh;
 }
 
-.hero-content {
-  display: flex;
-  justify-content: center;
+.hero-logo {
+  max-width: 420px;
 }
 
-.hero-content img {
-  max-width: 400px;
-  width: 100%;
-  height: auto;
+/* Panels and cards */
+.bg-panel {
+  background: var(--panel);
+  color: var(--text-light);
 }
 
-/* Tiles */
-.tile {
-  background-color: var(--mid-bg);
-  color: var(--text-white);
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 1200px;
-  margin: 0 auto 20px;
+/* Card flip-flop hover (like your old tiles) */
+.card-dark {
+  background: var(--card);
+  color: var(--text-light);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Factor List */
-.factor-list {
-  list-style: none;
-  background: var(--mid-bg);
-  padding: 30px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  border-radius: 20px;
-  max-width: 1200px;
+/* Make the whole card flip on hover */
+.card-dark:hover {
+  background: var(--green);
+  color: #000;
+  border-color: var(--green);
 }
 
-.factor-list b {
-  color: var(--green);
+/* Make headings and text flip correctly too */
+.card-dark:hover .brand-green {
+  color: #000;
 }
 
-.factor-list li {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  color: var(--text-white);
-  background-color: var(--text-black);
-  padding: 20px;
-  border-radius: 12px;
-  transition: all 0.3s;
+.card-dark:hover p {
+  color: #000;
 }
 
-.factor-list li:hover {
-  background-color: var(--green);
-  color: var(--text-black);
-}
-
-.factor-list li:hover b {
-  color: var(--text-black);
-}
-
-/* Ordered List */
-.ordered-list {
-  list-style: decimal inside;
-  background: var(--mid-bg);
-  padding: 30px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  border-radius: 20px;
-  max-width: 1200px;
-}
-
-.ordered-list b {
-  color: var(--green);
-}
-
-.ordered-list li {
-  padding: 20px;
-  color: var(--text-white);
-  background: var(--light-bg);
-  border-radius: 12px;
-}
-
-.ordered-list li::marker {
-  color: var(--green);
-  font-weight: bold;
-}
-
-/* Images */
-.ordered-list li img {
-  max-width: 48%;
-  border-radius: 10px;
-  display: block;
-}
-
-.ordered-list li .image-row {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.ordered-list li .image-row img {
-  flex: 1 1 45%;
-  max-width: 100%;
-  border-radius: 10px;
-  height: auto;
-}
-
-/* Factor List Responsiveness */
-@media (max-width: 900px) {
-  .factor-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .factor-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Footer */
-footer {
-  color: var(--text-white);
-  background-color: var(--text-black);
-  padding: 20px;
-}
-
-footer nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.button {
-  background-color: var(--green);
-  color: var(--text-black);
-  border-radius: 30px;
-  padding: 15px 25px;
-  text-align: center;
-  text-decoration: none;
-  margin: 20px;
-  display: inline-block;
-}
-
-.button:hover {
-  background-color: var(--mid-bg);
-  color: var(--green);
+/* Custom Bootstrap button variant */
+.btn-brand {
+  --bs-btn-color: #000;
+  --bs-btn-bg: var(--green);
+  --bs-btn-border-color: var(--green);
+  --bs-btn-hover-color: var(--green);
+  --bs-btn-hover-bg: #555;
+  --bs-btn-hover-border-color: #555;
+  --bs-btn-focus-shadow-rgb: 30, 255, 0;
 }
