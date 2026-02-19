@@ -1,3 +1,4 @@
+/* styles.css */
 :root {
   --green: rgb(30, 255, 0);
   --bg-black: #000;
@@ -7,17 +8,15 @@
   --panel-band: #2a2a2a;
 }
 
-.bg-panel-band {
-  background: var(--panel-band);
-}
-
-/* Global tweaks (keep light touch; Bootstrap does most) */
+/* Global */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Brand utility */
-.brand-green { color: var(--green); }
+/* Brand */
+.brand-green {
+  color: var(--green);
+}
 
 /* Hero */
 .hero {
@@ -33,28 +32,24 @@ body {
   max-width: 420px;
 }
 
-/* Panels and cards */
+/* Panels */
 .bg-panel {
   background: var(--panel);
   color: var(--text-light);
 }
 
-/* Lists */
+.bg-panel-band {
+  background: var(--panel-band);
+}
+
+/* List numbers */
 .list-group-numbered > .list-group-item::before {
-  font-size: 1.25rem; /* matches Bootstrap h5 size */
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--green);
 }
 
-.bg-section-dark {
-  background-color: #2a2a2a;
-}
-
-.bg-container-dark {
-  background-color: #2a2a2a;
-}
-
-/* Card flip-flop hover (like your old tiles) */
+/* Card flip-flop hover */
 .card-dark {
   background: var(--card);
   color: var(--text-light);
@@ -62,71 +57,23 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Make the whole card flip on hover */
 .card-dark:hover {
   background: var(--green);
   color: #000;
   border-color: var(--green);
 }
 
-/* Make headings and text flip correctly too */
-.card-dark:hover .brand-green {
-  color: #000;
-}
-
+.card-dark:hover .brand-green,
 .card-dark:hover p {
   color: #000;
 }
 
-/* 2 image style */
-.pattern-group {
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
+/* Step 4 image pair */
+.pattern-pair img {
+  display: block;
 }
 
-/* Cap the whole group to 300px and center it */
-.pattern-group {
-  max-width: 300px;
-}
-
-/* Make each image share space nicely and allow stacking */
-.pattern-img {
-  flex: 1 1 140px;   /* grow, shrink, base width */
-  max-width: 100%;
-  height: auto;
-}
-
-/* Side-by-side group: never wider than 300px total */
-.pattern-pair {
-  max-width: 300px;
-}
-
-/* Images: responsive, share space, and cap at 300px when stacked */
-.pattern-img {
-  flex: 1 1 0;      /* share available width */
-  min-width: 0;     /* prevent overflow weirdness */
-  max-width: 100%;  /* responsive */
-  height: auto;
-}
-
-/* When wrapped (stacked), each image can be up to 300px wide */
-@media (max-width: 575.98px) {
-  .pattern-pair {
-    max-width: 300px;   /* keep the stacked column capped */
-  }
-
-  .pattern-img {
-    flex-basis: 300px;  /* makes each image take the full line */
-    max-width: 300px;   /* ensures no image exceeds 300px when stacked */
-  }
-}
-
-.pattern-pair {
-  max-width: 300px; /* caps the whole group */
-}
-
-/* Custom Bootstrap button variant */
+/* Button */
 .btn-brand {
   --bs-btn-color: #000;
   --bs-btn-bg: var(--green);
