@@ -21,7 +21,7 @@ body {
 /* Hero */
 .hero {
   min-height: 40vh;
-  background: url("../_images/drums.jpg") center/cover no-repeat;
+  background: url("../images/drums.jpg") center/cover no-repeat;
 }
 
 .hero--small {
